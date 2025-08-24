@@ -50,4 +50,15 @@ module test ();
         // here, there are only 3 elements, despite biggest index being 1000
         array.delete(100); // deletes element at that index
     end
+
+    // generally shared functions for all variable sized arrays
+    int array[$] = '{1, 2, 2, 3, 3, 3}; // this is a queue
+    int result; int resultQ[$];
+    initial begin
+        result = array.size(); // returns 6 bc there's 6 elements
+        result = array.sum(); // returns 14 bc that's the sum of all the elements in the queue
+        resultQ = array.min(); // returns '{1} bc this returns a queue and it's the min value in this array
+        resultQ = array.max(); // returns '{3} bc this returns a queue and it's the max value in this array
+        resultQ = array.unique(); // returns '{1, 2, 3} bc this returns a queue and those are the unique values amongst the elements in this array
+    end
 endmodule
