@@ -41,8 +41,13 @@ module test ();
     end
 
     // associative array, creates elements per index, more similar to map 
+    // high key gives python dictionary
     int array[*];
     initial begin
-        
+        array[10] = 12;
+        array[100] = 34;
+        array[1000] = 56; 
+        // here, there are only 3 elements, despite biggest index being 1000
+        array.delete(100); // deletes element at that index
     end
 endmodule
