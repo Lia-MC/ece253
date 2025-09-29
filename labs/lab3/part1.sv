@@ -1,3 +1,5 @@
+`timescale 1ns / 1ns // `timescale time_unit/time_precision
+
 module FA (input logic a, b, cin, output logic s, cout);
     assign s = a^b^cin;
     assign cout = (a&b)|(cin&a)|(cin&b);
